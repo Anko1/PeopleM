@@ -6,10 +6,11 @@ $(function () {
     });
 
     $('#add').click(function (e) {
-        // e.preventDefault();
+        e.preventDefault();
 
-        createPeople();
+        // alert('on');
 
-        $('#form').trigger('reset');
+        validate(createPeople);
+
     })
 });
