@@ -19,6 +19,8 @@ var createPeople = function () {
     if (u.name && u.sex && u.date && u.address && u.phone && u.mail) {
         u.render();
         // alert('i');
+        $('#form').trigger('reset');
+
     }
 
     // console.log(u);
@@ -32,19 +34,13 @@ function validate(cd) {
     console.log(adr);
 
     $.ajax({
-        url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + adr + "&key=AIzaSyDQUJdc7IrJ9VxZwBD0M1FB91m2kELn1PM",
-        // contentType: "text/html; charset=UTF-8",
-        success: function (result) {
-            // alert('+');
+        url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + adr + ",UA"
+    }).done(function (data) {
+        // console.log(data);
 
-            cd();
+        // alert(data.status === 'OK');
 
-            $('#form').trigger('reset');
-
-        },
-        error: function (err) {
-            // alert('-');
-            return false;
-        }
+        if(data.status === 'OK') { cd(); }
     });
+
 }

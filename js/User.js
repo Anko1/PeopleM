@@ -14,7 +14,7 @@ function User(id) {
 
     this.render = function () {
         var dom = $(`<tr data-id="${id}"><td>${inst.name}</td><td>${inst.sex}</td><td>${inst.date}</td><td>${inst.address}</td><td>${inst.phone}</td><td>${inst.mail}</td></tr>`);
-
+        
         model = dom;
 
         $('#user-wrap').append(dom);
@@ -29,6 +29,8 @@ function User(id) {
 
         inst.isDataVisible = !inst.isDataVisible;
     };
+    
+    // console.log(this === window);
 
     function toggleData(val) {
         var c = model.children();

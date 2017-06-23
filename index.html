@@ -15,7 +15,7 @@
 
             <form id="form">
                 <div class="col l2">
-                    <input id="name" type="text" placeholder="Name" class="validate" required>
+                    <input id="name" type="text" pattern="^[a-zA-Z]+$" placeholder="Name" class="validate" required>
                 </div>
                 <div class="col l2">
                     <select id="sex" required>
@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="col l2">
-                    <input id="phone" type="tel" placeholder="Phone" class="validate" required>
+                    <input id="phone" type="tel" pattern="[0-9]{10}" placeholder="Phone" class="validate" required>
                 </div>
 
                 <div class="col l2">
